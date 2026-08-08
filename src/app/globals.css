@@ -1,0 +1,129 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ivory: #faf9f5;
+  --color-olive: #596348;
+  --color-olive-dark: #303728;
+  --color-gold: #b89b5e;
+  --color-beige: #efeadf;
+  --color-text: #33352f;
+
+  --font-serif: var(--font-cormorant), "Cormorant Garamond", Georgia, serif;
+  --font-sans: var(--font-dm-sans), "DM Sans", system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  body {
+    @apply bg-ivory text-text font-sans antialiased;
+  }
+
+  ::selection {
+    @apply bg-olive/20 text-olive-dark;
+  }
+}
+
+@layer utilities {
+  .section-padding {
+    @apply px-5 py-16 md:px-8 md:py-24 lg:px-12 lg:py-28;
+  }
+
+  .container-narrow {
+    @apply mx-auto max-w-6xl;
+  }
+
+  .container-wide {
+    @apply mx-auto max-w-7xl;
+  }
+
+  .gold-divider {
+    @apply h-px w-16 bg-gold/60;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.7s ease-out forwards;
+}
+
+.animate-fade-up-delay-1 {
+  animation: fade-up 0.7s ease-out 0.1s forwards;
+  opacity: 0;
+}
+
+.animate-fade-up-delay-2 {
+  animation: fade-up 0.7s ease-out 0.2s forwards;
+  opacity: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-up,
+  .animate-fade-up-delay-1,
+  .animate-fade-up-delay-2 {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .logo-sunburst {
+    animation: none !important;
+  }
+}
+
+@keyframes sunburst-drift {
+  0%,
+  100% {
+    transform: rotate(0deg);
+    opacity: 0.85;
+  }
+  50% {
+    transform: rotate(3deg);
+    opacity: 1;
+  }
+}
+
+@keyframes logo-breathe {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.008);
+  }
+}
+
+.logo-sunburst {
+  animation: sunburst-drift 24s ease-in-out infinite;
+  transform-origin: center center;
+}
