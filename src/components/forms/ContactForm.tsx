@@ -87,7 +87,13 @@ export function ContactForm() {
         <h3 className="font-serif text-2xl text-olive-dark">Message sent</h3>
         <p className="mt-3 text-sm text-text/75">
           Thank you for reaching out. We will respond within one business day at{" "}
-          {siteConfig.email}.
+          <a
+            href={`mailto:${siteConfig.email}`}
+            className="text-olive underline underline-offset-2 hover:text-olive-dark"
+          >
+            {siteConfig.email}
+          </a>
+          .
         </p>
       </div>
     );

@@ -37,13 +37,11 @@ export default function ContactPage() {
                   <address className="mt-5 space-y-3 not-italic text-sm leading-relaxed text-text/75">
                     <p>{siteConfig.address}</p>
                     <p>
-                      <a href={`mailto:${siteConfig.email}`} className="text-olive transition-colors hover:text-olive-dark">
+                      <a
+                        href={`mailto:${siteConfig.email}`}
+                        className="text-olive underline decoration-olive/30 underline-offset-4 transition-colors hover:text-olive-dark hover:decoration-olive"
+                      >
                         {siteConfig.email}
-                      </a>
-                    </p>
-                    <p>
-                      <a href={`tel:${siteConfig.phone.replace(/\s/g, "")}`} className="text-olive transition-colors hover:text-olive-dark">
-                        {siteConfig.phone}
                       </a>
                     </p>
                   </address>

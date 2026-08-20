@@ -133,9 +133,12 @@ export function RequestStaffForm() {
           finalise details.
         </p>
         <p className="mt-4 text-sm text-text/60">
-          Need immediate assistance? Call{" "}
-          <a href={`tel:${siteConfig.phone.replace(/\s/g, "")}`} className="text-olive underline-offset-2 hover:underline">
-            {siteConfig.phone}
+          Need immediate assistance? Email{" "}
+          <a
+            href={`mailto:${siteConfig.email}`}
+            className="text-olive underline underline-offset-2 hover:text-olive-dark"
+          >
+            {siteConfig.email}
           </a>
         </p>
       </div>

@@ -55,7 +55,7 @@ export default function AboutPage() {
                           ? "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=900&q=80"
                           : index === 2
                             ? "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=900&q=80"
-                            : "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=900&q=80"
+                            : "https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=900&q=80"
                     }
                     alt={`${section.title} — Sora Spa Collective`}
                     fill

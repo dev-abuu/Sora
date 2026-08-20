@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { navLinks } from "@/data/site";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/Button";
+import { AnimatedLogo } from "@/components/ui/AnimatedLogo";
 
 export function Header() {
   const pathname = usePathname();
@@ -40,6 +41,8 @@ export function Header() {
       )}
     >
       <div className="container-wide flex items-center justify-between gap-4 px-5 py-3 md:px-8 md:py-4">
+        <AnimatedLogo size="header" />
+
         <nav
           className="hidden items-center gap-7 xl:gap-8 lg:flex"
           aria-label="Main navigation"

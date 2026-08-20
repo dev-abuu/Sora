@@ -65,7 +65,7 @@ export default function RootLayout({
     <html lang="en-GB" className={`${cormorant.variable} ${dmSans.variable}`}>
       <body className="min-h-screen flex flex-col">
         <Header />
-        <main className="flex-1 pt-[72px] md:pt-[80px]">{children}</main>
+        <main className="flex-1 pt-[80px] md:pt-[88px]">{children}</main>
         <Footer />
       </body>
     </html>

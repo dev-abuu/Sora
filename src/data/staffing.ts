@@ -118,7 +118,7 @@ export const whoWeSupport = [
     title: "Private Clubs",
     description: "Private members' clubs with spa facilities needing discreet, skilled staff.",
     image:
-      "https://images.unsplash.com/photo-1560750588-73207b1e4b2a?w=600&q=80",
+      "https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=600&q=80",
     imageAlt: "Exclusive private club lounge with refined interior",
   },
   {

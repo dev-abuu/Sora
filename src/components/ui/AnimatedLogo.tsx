@@ -13,9 +13,9 @@ interface AnimatedLogoProps {
 
 const sizeMap = {
   header: {
-    width: 280,
-    height: 112,
-    className: "h-[4.25rem] w-auto sm:h-20 md:h-24 lg:h-[6.5rem]",
+    width: 200,
+    height: 80,
+    className: "h-14 w-auto md:h-16",
   },
   footer: {
     width: 260,

@@ -68,20 +68,6 @@ export function Footer() {
                 </li>
               ))}
             </ul>
-            <div className="mt-6 flex gap-4">
-              {Object.entries(siteConfig.social).map(([platform, url]) => (
-                <a
-                  key={platform}
-                  href={url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-xs uppercase tracking-wider text-ivory/60 transition-colors hover:text-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold/40"
-                  aria-label={`Follow us on ${platform}`}
-                >
-                  {platform.charAt(0).toUpperCase() + platform.slice(1)}
-                </a>
-              ))}
-            </div>
           </div>
 
           <div>
@@ -93,17 +79,9 @@ export function Footer() {
               <p>
                 <a
                   href={`mailto:${siteConfig.email}`}
-                  className="transition-colors hover:text-ivory"
+                  className="underline decoration-ivory/30 underline-offset-4 transition-colors hover:text-ivory hover:decoration-ivory"
                 >
                   {siteConfig.email}
-                </a>
-              </p>
-              <p>
-                <a
-                  href={`tel:${siteConfig.phone.replace(/\s/g, "")}`}
-                  className="transition-colors hover:text-ivory"
-                >
-                  {siteConfig.phone}
                 </a>
               </p>
             </address>
@@ -122,13 +100,10 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-16 flex flex-col items-center justify-between gap-4 border-t border-ivory/10 pt-8 md:flex-row">
-          <p className="text-xs text-ivory/50">
+        <div className="mt-16 border-t border-ivory/10 pt-8">
+          <p className="text-center text-xs text-ivory/50">
             &copy; {new Date().getFullYear()} Sora Spa Collective. All rights
             reserved.
-          </p>
-          <p className="text-xs text-ivory/50">
-            Premium spa staffing &amp; recruitment agency
           </p>
         </div>
       </div>

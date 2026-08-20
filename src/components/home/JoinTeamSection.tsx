@@ -12,8 +12,8 @@ export function JoinTeamSection() {
           <RevealOnScroll>
             <div className="relative aspect-[4/5] overflow-hidden rounded-sm">
               <Image
-                src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=800&q=80"
-                alt="Professional spa therapist in a premium hospitality setting"
+                src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800&q=80"
+                alt="Professional spa treatment in a premium hospitality setting"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"
