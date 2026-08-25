@@ -36,7 +36,7 @@ export function AnimatedLogo({
   variant,
 }: AnimatedLogoProps) {
   const dimensions = sizeMap[size];
-  const logoVariant = variant ?? (size === "footer" ? "transparent" : "ivory");
+  const logoVariant = variant ?? "transparent";
   const src =
     logoVariant === "ivory"
       ? "/images/logo-ivory.png"
@@ -48,7 +48,12 @@ export function AnimatedLogo({
       alt="Sora Spa Collective"
       width={dimensions.width}
       height={dimensions.height}
-      className={cn("object-contain object-left", dimensions.className, className)}
+      className={cn(
+        "bg-transparent object-contain object-left",
+        size === "header" && "mix-blend-multiply",
+        dimensions.className,
+        className,
+      )}
       priority={size === "header"}
       unoptimized
     />
@@ -58,7 +63,7 @@ export function AnimatedLogo({
     return (
       <Link
         href="/"
-        className="relative block shrink-0 transition-opacity hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-olive/30 focus-visible:ring-offset-2"
+        className="inline-flex shrink-0 items-center bg-transparent transition-opacity hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-olive/30"
         aria-label="Sora Spa Collective — Home"
       >
         {logoContent}
