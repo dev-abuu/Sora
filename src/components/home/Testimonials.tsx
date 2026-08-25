@@ -58,18 +58,6 @@ export function Testimonials() {
             </RevealOnScroll>
           ))}
         </div>
-
-        <RevealOnScroll delay={200}>
-          <div className="mt-14 rounded-sm border border-dashed border-gold/30 bg-beige/20 p-8 text-center">
-            <p className="text-xs font-sans uppercase tracking-[0.2em] text-text/45">
-              Partner Logos
-            </p>
-            <p className="mt-3 text-sm text-text/55">
-              Space reserved for client and partner logos. Add verified partnerships
-              here when available — do not display unconfirmed brand affiliations.
-            </p>
-          </div>
-        </RevealOnScroll>
       </div>
     </section>
   );
