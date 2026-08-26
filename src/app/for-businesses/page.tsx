@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import { photos } from "@/data/photos";
 import { staffingSolutions } from "@/data/staffing";
 import { whyChooseSora } from "@/data/content";
 import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
@@ -45,12 +46,12 @@ export default function ForBusinessesPage() {
     <>
       <section className="relative flex min-h-[50vh] items-center overflow-hidden">
         <Image
-          src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=1920&q=80"
-          alt="Luxury resort spa facility requiring professional staffing"
+          src={photos.spaBath}
+          alt="Luxury spa facility requiring professional staffing"
           fill
           priority
           sizes="100vw"
-          className="object-cover"
+          className="object-cover object-[center_40%]"
         />
         <div className="absolute inset-0 bg-olive-dark/55" />
         <div className="relative z-10 section-padding container-wide w-full">

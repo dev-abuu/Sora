@@ -1,16 +1,17 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/Button";
+import { photos } from "@/data/photos";
 
 export function Hero() {
   return (
     <section className="relative min-h-[88vh] flex items-center overflow-hidden">
       <Image
-        src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1920&q=80"
-        alt="Luxury hotel spa environment with professional wellness setting"
+        src={photos.spaBath}
+        alt="Luxury spa bath with warm lighting and still water"
         fill
         priority
         sizes="100vw"
-        className="object-cover"
+        className="object-cover object-[center_40%]"
       />
       <div className="absolute inset-0 bg-olive-dark/55" />
       <div className="relative z-10 section-padding container-wide w-full">

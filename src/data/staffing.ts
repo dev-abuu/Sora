@@ -89,44 +89,38 @@ export const whoWeSupport = [
   {
     title: "Hotels",
     description: "Luxury and boutique hotels requiring professional in-house spa teams.",
-    image:
-      "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&q=80",
-    imageAlt: "Luxury hotel lobby with elegant interior design",
+    image: "/images/spa/spa-bath.png",
+    imageAlt: "Hotel spa bath with warm lighting and still water",
   },
   {
     title: "Luxury Spas",
     description: "Premium day spas and destination spas seeking exceptional therapist talent.",
-    image:
-      "https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=600&q=80",
-    imageAlt: "Premium spa treatment room with calm, natural lighting",
+    image: "/images/spa/treatment-room.png",
+    imageAlt: "Prepared luxury spa treatment room",
   },
   {
     title: "Resorts",
     description: "Resort spas needing flexible staffing for seasonal and ongoing demand.",
-    image:
-      "https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=600&q=80",
-    imageAlt: "Luxury resort with pool and spa facilities",
+    image: "/images/spa/oil-bottles.png",
+    imageAlt: "Spa oils and linens in warm natural light",
   },
   {
     title: "Wellness Centres",
     description: "Wellness centres and holistic spaces requiring qualified professionals.",
-    image:
-      "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=600&q=80",
-    imageAlt: "Calm wellness centre interior with natural light",
+    image: "/images/spa/stones-candles.png",
+    imageAlt: "Wellness still life with massage stones, oils and candles",
   },
   {
     title: "Private Clubs",
     description: "Private members' clubs with spa facilities needing discreet, skilled staff.",
-    image:
-      "https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=600&q=80",
-    imageAlt: "Exclusive private club lounge with refined interior",
+    image: "/images/spa/oil-bowl.png",
+    imageAlt: "Discreet spa ritual with oil poured into a wooden bowl",
   },
   {
     title: "Corporate Wellness",
     description: "Corporate wellness providers and workplace programmes requiring spa professionals.",
-    image:
-      "https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=80",
-    imageAlt: "Modern corporate wellness space with clean design",
+    image: "/images/spa/oil-palm.png",
+    imageAlt: "Golden spa oil pooled in an open palm",
   },
 ];
 

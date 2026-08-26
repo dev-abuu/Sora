@@ -109,6 +109,7 @@ export const aboutSections = [
     id: "what",
     eyebrow: "What We Do",
     title: "A premium spa staffing partner",
+    image: "/images/spa/treatment-room.png",
     content: [
       "Sora Spa Collective is a staffing and recruitment agency specialising in spa and wellness professionals for the hospitality industry.",
       "We connect exceptional therapists with hotels, spas, resorts and wellness businesses that need reliable, qualified staff — without compromising on service quality.",
@@ -118,6 +119,7 @@ export const aboutSections = [
     id: "why",
     eyebrow: "Why Sora Exists",
     title: "Exceptional people create exceptional experiences",
+    image: "/images/spa/spa-bath.png",
     content: [
       "Premium hospitality environments demand therapists who understand service excellence, discretion and the standards expected by discerning guests.",
       "Sora was founded to bridge the gap between businesses that need skilled spa staff and qualified professionals seeking meaningful opportunities in luxury wellness.",
@@ -127,6 +129,7 @@ export const aboutSections = [
     id: "approach",
     eyebrow: "Our Approach",
     title: "Selective, intentional, quality-focused",
+    image: "/images/spa/oil-pour-uniform.png",
     content: [
       "We take a selective approach to the professionals we represent. Quality over quantity guides every decision — from vetting therapists to understanding client needs.",
       "Our team works closely with both hospitality partners and therapists to ensure every placement is the right fit.",
@@ -136,6 +139,7 @@ export const aboutSections = [
     id: "commitment",
     eyebrow: "Our Commitment",
     title: "Partners in excellence",
+    image: "/images/spa/hot-stone.png",
     content: [
       "To our hospitality partners, we promise responsive, reliable staffing solutions backed by genuine care for your operation and guest experience.",
       "To our therapists, we promise access to premium opportunities, professional support and a collective that values their craft and career.",

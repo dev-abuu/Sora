@@ -48,15 +48,7 @@ export default function AboutPage() {
               <RevealOnScroll delay={150} className={index % 2 === 1 ? "lg:[direction:ltr]" : ""}>
                 <div className="relative aspect-[4/3] overflow-hidden rounded-sm">
                   <Image
-                    src={
-                      index === 0
-                        ? "https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=900&q=80"
-                        : index === 1
-                          ? "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=900&q=80"
-                          : index === 2
-                            ? "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=900&q=80"
-                            : "https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=900&q=80"
-                    }
+                    src={section.image}
                     alt={`${section.title} — Sora Spa Collective`}
                     fill
                     sizes="(max-width: 1024px) 100vw, 50vw"

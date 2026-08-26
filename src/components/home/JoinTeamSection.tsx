@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { photos } from "@/data/photos";
 import { therapistBenefits } from "@/data/staffing";
 import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -12,8 +13,8 @@ export function JoinTeamSection() {
           <RevealOnScroll>
             <div className="relative aspect-[4/5] overflow-hidden rounded-sm">
               <Image
-                src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800&q=80"
-                alt="Professional spa treatment in a premium hospitality setting"
+                src={photos.oilPourBack}
+                alt="Spa therapist pouring massage oil during a professional treatment"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"

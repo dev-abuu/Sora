@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import { photos } from "@/data/photos";
 import { therapistBenefits } from "@/data/staffing";
 import { therapistTestimonials } from "@/data/content";
 import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
@@ -17,12 +18,12 @@ export default function ForTherapistsPage() {
     <>
       <section className="relative flex min-h-[50vh] items-center overflow-hidden">
         <Image
-          src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=1920&q=80"
-          alt="Professional spa therapist working in a premium hospitality environment"
+          src={photos.hotStone}
+          alt="Professional spa therapist delivering a hot stone treatment"
           fill
           priority
           sizes="100vw"
-          className="object-cover"
+          className="object-cover object-[center_30%]"
         />
         <div className="absolute inset-0 bg-olive-dark/55" />
         <div className="relative z-10 section-padding container-wide w-full">

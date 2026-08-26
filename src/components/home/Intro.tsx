@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { photos } from "@/data/photos";
 import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 
@@ -17,8 +18,8 @@ export function Intro() {
           <RevealOnScroll delay={150}>
             <div className="relative aspect-[4/3] overflow-hidden rounded-sm">
               <Image
-                src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=900&q=80"
-                alt="Professional spa therapist preparing treatment room in a luxury hotel spa"
+                src={photos.treatmentRoom}
+                alt="Prepared spa treatment room with oils, linens and warm lighting"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"
