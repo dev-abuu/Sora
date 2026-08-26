@@ -17,7 +17,7 @@ export function JoinTeamSection() {
                 alt="Spa therapist pouring massage oil during a professional treatment"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover"
+                className="object-cover object-[center_18%]"
               />
             </div>
           </RevealOnScroll>

@@ -44,14 +44,14 @@ const businessServices = [
 export default function ForBusinessesPage() {
   return (
     <>
-      <section className="relative flex min-h-[50vh] items-center overflow-hidden">
+      <section className="relative flex min-h-[68vh] items-center overflow-hidden">
         <Image
           src={photos.spaBath}
           alt="Luxury spa facility requiring professional staffing"
           fill
           priority
           sizes="100vw"
-          className="object-cover object-[center_40%]"
+          className="object-cover object-[center_28%]"
         />
         <div className="absolute inset-0 bg-olive-dark/55" />
         <div className="relative z-10 section-padding container-wide w-full">

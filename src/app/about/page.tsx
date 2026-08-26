@@ -46,13 +46,13 @@ export default function AboutPage() {
                 </div>
               </RevealOnScroll>
               <RevealOnScroll delay={150} className={index % 2 === 1 ? "lg:[direction:ltr]" : ""}>
-                <div className="relative aspect-[4/3] overflow-hidden rounded-sm">
+                <div className="relative aspect-[4/5] overflow-hidden rounded-sm">
                   <Image
                     src={section.image}
                     alt={`${section.title} — Sora Spa Collective`}
                     fill
                     sizes="(max-width: 1024px) 100vw, 50vw"
-                    className="object-cover"
+                    className={`object-cover ${section.imageClass}`}
                   />
                 </div>
               </RevealOnScroll>

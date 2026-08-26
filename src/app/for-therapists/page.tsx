@@ -16,10 +16,10 @@ export const metadata: Metadata = {
 export default function ForTherapistsPage() {
   return (
     <>
-      <section className="relative flex min-h-[50vh] items-center overflow-hidden">
+      <section className="relative flex min-h-[62vh] items-center overflow-hidden">
         <Image
-          src={photos.hotStone}
-          alt="Professional spa therapist delivering a hot stone treatment"
+          src={photos.oilPourUniform}
+          alt="Spa therapist pouring oil during a professional treatment"
           fill
           priority
           sizes="100vw"

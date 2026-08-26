@@ -91,36 +91,42 @@ export const whoWeSupport = [
     description: "Luxury and boutique hotels requiring professional in-house spa teams.",
     image: "/images/spa/spa-bath.png",
     imageAlt: "Hotel spa bath with warm lighting and still water",
+    imageClass: "object-[center_28%]",
   },
   {
     title: "Luxury Spas",
     description: "Premium day spas and destination spas seeking exceptional therapist talent.",
     image: "/images/spa/treatment-room.png",
     imageAlt: "Prepared luxury spa treatment room",
+    imageClass: "object-[center_35%]",
   },
   {
     title: "Resorts",
     description: "Resort spas needing flexible staffing for seasonal and ongoing demand.",
     image: "/images/spa/oil-bottles.png",
     imageAlt: "Spa oils and linens in warm natural light",
+    imageClass: "object-[center_42%]",
   },
   {
     title: "Wellness Centres",
     description: "Wellness centres and holistic spaces requiring qualified professionals.",
     image: "/images/spa/stones-candles.png",
     imageAlt: "Wellness still life with massage stones, oils and candles",
+    imageClass: "object-[center_22%]",
   },
   {
     title: "Private Clubs",
     description: "Private members' clubs with spa facilities needing discreet, skilled staff.",
     image: "/images/spa/oil-bowl.png",
     imageAlt: "Discreet spa ritual with oil poured into a wooden bowl",
+    imageClass: "object-[center_18%]",
   },
   {
     title: "Corporate Wellness",
     description: "Corporate wellness providers and workplace programmes requiring spa professionals.",
     image: "/images/spa/oil-palm.png",
     imageAlt: "Golden spa oil pooled in an open palm",
+    imageClass: "object-center",
   },
 ];
 
