@@ -21,7 +21,7 @@ export function WhoWeSupport() {
           {whoWeSupport.map((item, index) => (
             <RevealOnScroll key={item.title} delay={index * 80}>
               <article className="group overflow-hidden rounded-sm border border-beige bg-ivory transition-shadow duration-300 hover:shadow-[0_8px_30px_rgba(48,55,40,0.06)]">
-                <div className="relative aspect-[4/5] overflow-hidden">
+                <div className="relative aspect-[16/10] overflow-hidden">
                   <Image
                     src={item.image}
                     alt={item.imageAlt}
