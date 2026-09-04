@@ -89,16 +89,16 @@ export const whoWeSupport = [
   {
     title: "Hotels",
     description: "Luxury and boutique hotels requiring professional in-house spa teams.",
-    image: "/images/spa/spa-bath.png",
-    imageAlt: "Hotel spa bath with warm lighting and still water",
-    imageClass: "object-[center_28%]",
+    image: "/images/venues/hotel.jpg",
+    imageAlt: "Luxury hotel with balconies and palm-lined terraces",
+    imageClass: "object-center",
   },
   {
     title: "Luxury Spas",
     description: "Premium day spas and destination spas seeking exceptional therapist talent.",
-    image: "/images/spa/treatment-room.png",
-    imageAlt: "Prepared luxury spa treatment room",
-    imageClass: "object-[center_35%]",
+    image: "/images/venues/luxury-spa.jpg",
+    imageAlt: "Luxury spa soak tub in a calm stone treatment suite",
+    imageClass: "object-center",
   },
   {
     title: "Resorts",
@@ -118,7 +118,7 @@ export const whoWeSupport = [
     title: "Private Clubs",
     description: "Private members' clubs with spa facilities needing discreet, skilled staff.",
     image: "/images/venues/private-club.jpg",
-    imageAlt: "Exclusive private club lounge with refined interior",
+    imageAlt: "Private members' lounge with leather seating and garden views",
     imageClass: "object-center",
   },
   {
