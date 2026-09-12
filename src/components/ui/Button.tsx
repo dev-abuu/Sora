@@ -46,13 +46,16 @@ export function Button({
     className,
   );
 
-  if (external) {
+  const isMailOrTel = href.startsWith("mailto:") || href.startsWith("tel:");
+
+  if (external || isMailOrTel) {
     return (
       <a
         href={href}
         className={classes}
-        target="_blank"
-        rel="noopener noreferrer"
+        {...(external && !isMailOrTel
+          ? { target: "_blank", rel: "noopener noreferrer" }
+          : {})}
         {...props}
       >
         {children}

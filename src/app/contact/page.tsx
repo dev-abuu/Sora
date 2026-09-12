@@ -34,17 +34,14 @@ export default function ContactPage() {
                 <div>
                   <h3 className="font-serif text-2xl text-olive-dark">Get in Touch</h3>
                   <div className="gold-divider mt-4" />
-                  <address className="mt-5 space-y-3 not-italic text-sm leading-relaxed text-text/75">
-                    <p>{siteConfig.address}</p>
-                    <p>
-                      <a
-                        href={`mailto:${siteConfig.email}`}
-                        className="text-olive underline decoration-olive/30 underline-offset-4 transition-colors hover:text-olive-dark hover:decoration-olive"
-                      >
-                        {siteConfig.email}
-                      </a>
-                    </p>
-                  </address>
+                  <p className="mt-5 text-sm leading-relaxed text-text/75">
+                    <a
+                      href={`mailto:${siteConfig.email}`}
+                      className="text-olive underline decoration-olive/30 underline-offset-4 transition-colors hover:text-olive-dark hover:decoration-olive"
+                    >
+                      {siteConfig.email}
+                    </a>
+                  </p>
                 </div>
 
                 <div>
@@ -57,26 +54,7 @@ export default function ContactPage() {
                   </ul>
                 </div>
 
-                <div>
-                  <h3 className="font-serif text-2xl text-olive-dark">Follow Us</h3>
-                  <div className="gold-divider mt-4" />
-                  <div className="mt-5 flex flex-wrap gap-4">
-                    {Object.entries(siteConfig.social).map(([platform, url]) => (
-                      <a
-                        key={platform}
-                        href={url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-sm uppercase tracking-wider text-olive transition-colors hover:text-gold"
-                      >
-                        {platform.charAt(0).toUpperCase() + platform.slice(1)}
-                      </a>
-                    ))}
-                  </div>
-                </div>
-
                 <div className="flex flex-wrap gap-3">
-                  <Button href="/request-staff">Request Staff</Button>
                   <Button href="/join-team" variant="secondary">Join Team</Button>
                 </div>
               </div>

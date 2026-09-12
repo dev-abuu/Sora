@@ -6,15 +6,10 @@ export const siteConfig = {
   url: "https://soraspacollective.co.uk",
   email: "info@soraspacollective.co.uk",
   phone: "+44 20 7946 0958",
-  address: "London, United Kingdom",
   hours: {
-    weekdays: "Monday – Friday: 9:00 – 18:00",
-    saturday: "Saturday: 10:00 – 14:00",
+    weekdays: "Monday–Friday: 9am–5pm",
+    saturday: "Saturday: 10am–5pm",
     sunday: "Sunday: Closed",
-  },
-  social: {
-    instagram: "https://instagram.com/soraspacollective",
-    linkedin: "https://linkedin.com/company/soraspacollective",
   },
 };
 
@@ -29,7 +24,7 @@ export const navLinks = [
 export const footerLinks = {
   businesses: [
     { label: "For Businesses", href: "/for-businesses" },
-    { label: "Request Staff", href: "/request-staff" },
+    { label: "Discuss Your Needs", href: "/contact" },
     { label: "Staffing Solutions", href: "/for-businesses#solutions" },
   ],
   therapists: [

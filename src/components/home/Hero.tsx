@@ -30,8 +30,8 @@ export function Hero() {
             staffing solutions without compromising on service quality.
           </p>
           <div className="mt-8 flex flex-wrap gap-4 animate-fade-up-delay-2">
-            <Button href="/request-staff" size="lg">
-              Request Staff
+            <Button href="/contact" size="lg">
+              Discuss Your Needs
             </Button>
             <Button href="/join-team" variant="outline" size="lg">
               Join Team

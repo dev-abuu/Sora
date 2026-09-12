@@ -72,7 +72,7 @@ export default function AboutPage() {
               className="mx-auto"
             />
             <div className="mt-8 flex flex-wrap justify-center gap-4">
-              <Button href="/request-staff" size="lg">Request Staff</Button>
+              <Button href="/contact" size="lg">Discuss Your Needs</Button>
               <Button href="/join-team" variant="secondary" size="lg">Join Team</Button>
             </div>
           </RevealOnScroll>

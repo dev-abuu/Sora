@@ -68,8 +68,7 @@ export default function ForBusinessesPage() {
               operation demands.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
-              <Button href="/request-staff" size="lg">Request Staff</Button>
-              <Button href="/contact" variant="outline" size="lg">Discuss Your Needs</Button>
+              <Button href="/contact" size="lg">Discuss Your Needs</Button>
             </div>
           </RevealOnScroll>
         </div>
@@ -120,7 +119,7 @@ export default function ForBusinessesPage() {
           </div>
           <RevealOnScroll delay={200}>
             <div className="mt-12 text-center">
-              <Button href="/request-staff" size="lg">Submit Staffing Request</Button>
+              <Button href="/contact" size="lg">Discuss Your Needs</Button>
             </div>
           </RevealOnScroll>
         </div>

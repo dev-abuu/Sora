@@ -67,8 +67,8 @@ export function Header() {
           <Button href="/join-team" variant="secondary" size="sm">
             Join Team
           </Button>
-          <Button href="/request-staff" size="sm">
-            Request Staff
+          <Button href="/contact" size="sm">
+            Discuss Your Needs
           </Button>
         </div>
 
@@ -138,8 +138,8 @@ export function Header() {
               menuOpen && "animate-fade-up-delay-2",
             )}
           >
-            <Button href="/request-staff" size="lg">
-              Request Staff
+            <Button href="/contact" size="lg">
+              Discuss Your Needs
             </Button>
             <Button href="/join-team" variant="secondary" size="lg">
               Join Team

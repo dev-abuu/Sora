@@ -9,6 +9,7 @@ import {
   textareaClasses,
 } from "@/components/ui/FormField";
 import { SubmitButton } from "@/components/ui/Button";
+import { openEnquiryEmail } from "@/lib/email";
 
 interface ContactFormData {
   name: string;
@@ -76,7 +77,17 @@ export function ContactForm() {
       return;
     }
     setSubmitting(true);
-    await new Promise((resolve) => setTimeout(resolve, 600));
+    const details = [
+      `Name: ${form.name}`,
+      form.company && `Company: ${form.company}`,
+      `Email: ${form.email}`,
+      form.phone && `Phone: ${form.phone}`,
+      `Enquiry type: ${form.enquiryType}`,
+    ].filter(Boolean);
+    openEnquiryEmail(
+      `Website enquiry — ${form.enquiryType}`,
+      `${details.join("\n")}\n\n${form.message}`,
+    );
     setSubmitting(false);
     setSubmitted(true);
   };
@@ -86,7 +97,7 @@ export function ContactForm() {
       <div className="rounded-sm border border-gold/30 bg-beige/40 p-8 text-center" role="status">
         <h3 className="font-serif text-2xl text-olive-dark">Message sent</h3>
         <p className="mt-3 text-sm text-text/75">
-          Thank you for reaching out. We will respond within one business day at{" "}
+          Thank you for reaching out. Please send the email that opened to{" "}
           <a
             href={`mailto:${siteConfig.email}`}
             className="text-olive underline underline-offset-2 hover:text-olive-dark"

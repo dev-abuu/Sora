@@ -10,6 +10,8 @@ import {
 import { SubmitButton } from "@/components/ui/Button";
 import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { siteConfig } from "@/data/site";
+import { openEnquiryEmail } from "@/lib/email";
 
 interface FormData {
   fullName: string;
@@ -111,7 +113,26 @@ export function JoinTeamForm() {
       return;
     }
     setSubmitting(true);
-    await new Promise((resolve) => setTimeout(resolve, 800));
+    openEnquiryEmail(
+      `Join Team application — ${form.fullName}`,
+      [
+        `Full name: ${form.fullName}`,
+        `Email: ${form.email}`,
+        `Phone: ${form.phone}`,
+        `Location: ${form.location}`,
+        `Professional title: ${form.professionalTitle}`,
+        `Years of experience: ${form.yearsExperience}`,
+        `Qualifications: ${form.qualifications}`,
+        `Specialities: ${form.specialities}`,
+        form.previousExperience && `Previous experience: ${form.previousExperience}`,
+        `Availability: ${form.availability}`,
+        form.workingArrangements && `Working arrangements: ${form.workingArrangements}`,
+        `Right to work: ${form.rightToWork}`,
+        form.additionalInfo && `Additional information: ${form.additionalInfo}`,
+      ]
+        .filter(Boolean)
+        .join("\n"),
+    );
     setSubmitting(false);
     setSubmitted(true);
   };
@@ -124,9 +145,16 @@ export function JoinTeamForm() {
           Application received
         </h3>
         <p className="mx-auto mt-4 max-w-md text-sm leading-relaxed text-text/75">
-          Thank you for your interest in joining the Sora Collective. Our recruitment
-          team will review your application and contact you within five business
-          days. This submission does not guarantee placement.
+          Thank you for your interest in joining the Sora Collective. Please send
+          the email that opened to{" "}
+          <a
+            href={`mailto:${siteConfig.email}`}
+            className="text-olive underline underline-offset-2 hover:text-olive-dark"
+          >
+            {siteConfig.email}
+          </a>{" "}
+          if it did not send automatically. This submission does not guarantee
+          placement.
         </p>
       </div>
     );

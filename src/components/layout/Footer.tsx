@@ -22,11 +22,11 @@ export function Footer() {
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <Button
-                href="/request-staff"
+                href="/contact"
                 size="sm"
                 className="border-ivory/30 bg-ivory text-olive-dark hover:bg-beige"
               >
-                Request Staff
+                Discuss Your Needs
               </Button>
               <Button href="/join-team" variant="outline" size="sm">
                 Join Team
@@ -74,17 +74,14 @@ export function Footer() {
             <h3 className="text-xs font-sans font-medium uppercase tracking-[0.2em] text-gold">
               Contact
             </h3>
-            <address className="mt-5 space-y-2 not-italic text-sm text-ivory/75">
-              <p>{siteConfig.address}</p>
-              <p>
-                <a
-                  href={`mailto:${siteConfig.email}`}
-                  className="underline decoration-ivory/30 underline-offset-4 transition-colors hover:text-ivory hover:decoration-ivory"
-                >
-                  {siteConfig.email}
-                </a>
-              </p>
-            </address>
+            <p className="mt-5 text-sm text-ivory/75">
+              <a
+                href={`mailto:${siteConfig.email}`}
+                className="underline decoration-ivory/30 underline-offset-4 transition-colors hover:text-ivory hover:decoration-ivory"
+              >
+                {siteConfig.email}
+              </a>
+            </p>
             <ul className="mt-5 space-y-3">
               {footerLinks.company.map((link) => (
                 <li key={link.href}>

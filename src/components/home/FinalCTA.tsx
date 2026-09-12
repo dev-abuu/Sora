@@ -18,13 +18,10 @@ export function FinalCTA() {
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             <Button
-              href="/request-staff"
+              href="/contact"
               size="lg"
               className="bg-ivory text-olive-dark border-ivory hover:bg-beige hover:border-beige"
             >
-              Request Staff
-            </Button>
-            <Button href="/contact" variant="outline" size="lg">
               Discuss Your Needs
             </Button>
           </div>
