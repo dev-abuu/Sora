@@ -110,7 +110,6 @@ export default function ForTherapistsPage() {
             <SectionHeading
               eyebrow="Testimonials"
               title="From our collective members"
-              description="Placeholder testimonials — replace with real feedback from Sora therapists when available."
               align="center"
               className="mx-auto"
             />
@@ -119,13 +118,7 @@ export default function ForTherapistsPage() {
             {therapistTestimonials.map((item, index) => (
               <RevealOnScroll key={item.id} delay={index * 80}>
                 <blockquote className="rounded-sm border border-gold/20 bg-beige/30 p-7">
-                  <span className="mb-3 inline-block rounded-sm border border-gold/30 px-2 py-0.5 text-[10px] font-sans uppercase tracking-wider text-gold">
-                    Placeholder testimonial
-                  </span>
                   <p className="font-serif text-lg leading-relaxed text-olive-dark">&ldquo;{item.quote}&rdquo;</p>
-                  <footer className="mt-4 border-t border-gold/15 pt-3 text-sm text-text/60">
-                    {item.name} — {item.role}
-                  </footer>
                 </blockquote>
               </RevealOnScroll>
             ))}

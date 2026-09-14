@@ -7,44 +7,46 @@ import { Button } from "@/components/ui/Button";
 
 export function Footer() {
   const pathname = usePathname();
-  const hideJoinTeamCta = pathname === "/for-businesses";
+  const isForBusinesses = pathname === "/for-businesses";
   return (
     <footer className="border-t border-beige bg-olive-dark text-ivory">
       <div className="section-padding container-wide">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4 lg:gap-8">
-          <div className="lg:col-span-1">
-            <Link
-              href="/"
-              className="font-serif text-2xl text-ivory transition-opacity hover:opacity-90"
-            >
-              Sora Spa Collective
-            </Link>
-            <p className="mt-5 max-w-xs text-sm leading-relaxed text-ivory/70">
-              Premium spa staffing and recruitment for hotels, spas and wellness
-              businesses across hospitality.
-            </p>
-            <div className="mt-6 flex flex-wrap gap-3">
-              <Button
-                href="/contact"
-                size="sm"
-                className="border-ivory/30 bg-ivory text-olive-dark hover:bg-beige"
+          {!isForBusinesses && (
+            <div className="lg:col-span-1">
+              <Link
+                href="/"
+                className="font-serif text-2xl text-ivory transition-opacity hover:opacity-90"
               >
-                Discuss Your Needs
-              </Button>
-              {!hideJoinTeamCta && (
+                Sora Spa Collective
+              </Link>
+              <p className="mt-5 max-w-xs text-sm leading-relaxed text-ivory/70">
+                Premium spa staffing and recruitment for hotels, spas and wellness
+                businesses across hospitality.
+              </p>
+              <div className="mt-6 flex flex-wrap gap-3">
+                <Button
+                  href="/contact"
+                  size="sm"
+                  className="border-ivory/30 bg-ivory text-olive-dark hover:bg-beige"
+                >
+                  Discuss Your Needs
+                </Button>
                 <Button href="/join-team" variant="outline" size="sm">
                   Join Team
                 </Button>
-              )}
+              </div>
             </div>
-          </div>
+          )}
 
           <div>
             <h3 className="text-xs font-sans font-medium uppercase tracking-[0.2em] text-gold">
               For Businesses
             </h3>
             <ul className="mt-5 space-y-3">
-              {footerLinks.businesses.map((link) => (
+              {footerLinks.businesses
+                .filter((link) => !(isForBusinesses && link.href === "/contact"))
+                .map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
@@ -63,7 +65,7 @@ export function Footer() {
             </h3>
             <ul className="mt-5 space-y-3">
               {footerLinks.therapists
-                .filter((link) => !(hideJoinTeamCta && link.href === "/join-team"))
+                .filter((link) => !(isForBusinesses && link.href === "/join-team"))
                 .map((link) => (
                 <li key={link.href}>
                   <Link

@@ -1,23 +1,10 @@
 interface TestimonialCardProps {
   quote: string;
-  name: string;
-  role: string;
-  placeholder?: boolean;
 }
 
-export function TestimonialCard({
-  quote,
-  name,
-  role,
-  placeholder,
-}: TestimonialCardProps) {
+export function TestimonialCard({ quote }: TestimonialCardProps) {
   return (
     <blockquote className="flex h-full flex-col rounded-sm border border-gold/20 bg-beige/40 p-8 md:p-10">
-      {placeholder && (
-        <span className="mb-3 inline-block w-fit rounded-sm border border-gold/30 px-2 py-0.5 text-[10px] font-sans uppercase tracking-wider text-gold">
-          Placeholder testimonial
-        </span>
-      )}
       <svg
         className="mb-4 h-6 w-6 text-gold/60"
         fill="currentColor"
@@ -29,14 +16,6 @@ export function TestimonialCard({
       <p className="flex-1 font-serif text-xl leading-relaxed text-olive-dark md:text-2xl">
         &ldquo;{quote}&rdquo;
       </p>
-      <footer className="mt-6 border-t border-gold/20 pt-5">
-        <cite className="not-italic">
-          <span className="block font-sans text-sm font-medium text-olive-dark">
-            {name}
-          </span>
-          <span className="mt-1 block text-xs text-text/60">{role}</span>
-        </cite>
-      </footer>
     </blockquote>
   );
 }
