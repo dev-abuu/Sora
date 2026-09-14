@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { siteConfig } from "@/data/site";
 import {
   FormField,
   inputClasses,
@@ -9,7 +8,7 @@ import {
   textareaClasses,
 } from "@/components/ui/FormField";
 import { SubmitButton } from "@/components/ui/Button";
-import { openEnquiryEmail } from "@/lib/email";
+import { submitEnquiry } from "@/lib/email";
 
 interface ContactFormData {
   name: string;
@@ -58,6 +57,7 @@ export function ContactForm() {
   const [errors, setErrors] = useState<ContactFormErrors>({});
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState("");
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>,
@@ -69,27 +69,41 @@ export function ContactForm() {
     }
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const validationErrors = validate(form);
     if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors);
       return;
     }
+    const honey = (e.currentTarget.elements.namedItem("website") as HTMLInputElement | null)?.value;
+    setSubmitError("");
     setSubmitting(true);
-    const details = [
-      `Name: ${form.name}`,
-      form.company && `Company: ${form.company}`,
-      `Email: ${form.email}`,
-      form.phone && `Phone: ${form.phone}`,
-      `Enquiry type: ${form.enquiryType}`,
-    ].filter(Boolean);
-    openEnquiryEmail(
-      `Website enquiry — ${form.enquiryType}`,
-      `${details.join("\n")}\n\n${form.message}`,
-    );
-    setSubmitting(false);
-    setSubmitted(true);
+    try {
+      await submitEnquiry({
+        type: "contact",
+        subject: `Website enquiry — ${form.enquiryType}`,
+        replyTo: form.email.trim(),
+        honey,
+        fields: {
+          Name: form.name,
+          Company: form.company,
+          Email: form.email,
+          Phone: form.phone,
+          "Enquiry type": form.enquiryType,
+          Message: form.message,
+        },
+      });
+      setSubmitted(true);
+    } catch (error) {
+      setSubmitError(
+        error instanceof Error
+          ? error.message
+          : "We could not send your message. Please try again.",
+      );
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   if (submitted) {
@@ -97,14 +111,8 @@ export function ContactForm() {
       <div className="rounded-sm border border-gold/30 bg-beige/40 p-8 text-center" role="status">
         <h3 className="font-serif text-2xl text-olive-dark">Message sent</h3>
         <p className="mt-3 text-sm text-text/75">
-          Thank you for reaching out. Please send the email that opened to{" "}
-          <a
-            href={`mailto:${siteConfig.email}`}
-            className="text-olive underline underline-offset-2 hover:text-olive-dark"
-          >
-            {siteConfig.email}
-          </a>
-          .
+          Thank you for reaching out. We have received your enquiry and will
+          respond within one business day.
         </p>
       </div>
     );
@@ -140,6 +148,17 @@ export function ContactForm() {
       <FormField label="Message" id="contact-message" error={errors.message}>
         <textarea id="contact-message" name="message" value={form.message} onChange={handleChange} className={textareaClasses} aria-invalid={!!errors.message} />
       </FormField>
+
+      <div className="hidden" aria-hidden="true">
+        <label htmlFor="contact-website">Website</label>
+        <input id="contact-website" name="website" type="text" tabIndex={-1} autoComplete="off" />
+      </div>
+
+      {submitError && (
+        <p className="text-sm text-red-700" role="alert">
+          {submitError}
+        </p>
+      )}
 
       <SubmitButton disabled={submitting}>
         {submitting ? "Sending..." : "Send Message"}

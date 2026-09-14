@@ -6,12 +6,12 @@ export function Hero() {
   return (
     <section className="relative min-h-[88vh] flex items-center overflow-hidden">
       <Image
-        src={photos.hotStone}
-        alt="Professional spa therapist delivering a hot stone treatment"
+        src={photos.heroSpa}
+        alt="Serene spa pool with sage arches, plants and warm natural light"
         fill
         priority
         sizes="100vw"
-        className="object-cover object-center"
+        className="object-cover object-[center_42%]"
       />
       <div className="absolute inset-0 bg-olive-dark/55" />
       <div className="relative z-10 section-padding container-wide w-full">

@@ -4,11 +4,11 @@ export const siteConfig = {
   description:
     "Sora Spa Collective is a premium spa staffing and recruitment agency connecting hotels, spas and wellness businesses with experienced, professional spa therapists.",
   url: "https://soraspacollective.co.uk",
-  email: "info@soraspacollective.co.uk",
+  email: "Info@soraspacollective.co.uk",
   phone: "+44 20 7946 0958",
   hours: {
-    weekdays: "Monday–Friday: 9am–5pm",
-    saturday: "Saturday: 10am–5pm",
+    weekdays: "Monday – Friday: 9am – 5pm",
+    saturday: "Saturday: 10am – 5pm",
     sunday: "Sunday: Closed",
   },
 };

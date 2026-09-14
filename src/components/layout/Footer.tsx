@@ -1,10 +1,13 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { footerLinks, siteConfig } from "@/data/site";
 import { Button } from "@/components/ui/Button";
 
 export function Footer() {
+  const pathname = usePathname();
+  const hideJoinTeamCta = pathname === "/for-businesses";
   return (
     <footer className="border-t border-beige bg-olive-dark text-ivory">
       <div className="section-padding container-wide">
@@ -28,9 +31,11 @@ export function Footer() {
               >
                 Discuss Your Needs
               </Button>
-              <Button href="/join-team" variant="outline" size="sm">
-                Join Team
-              </Button>
+              {!hideJoinTeamCta && (
+                <Button href="/join-team" variant="outline" size="sm">
+                  Join Team
+                </Button>
+              )}
             </div>
           </div>
 
@@ -57,7 +62,9 @@ export function Footer() {
               For Therapists
             </h3>
             <ul className="mt-5 space-y-3">
-              {footerLinks.therapists.map((link) => (
+              {footerLinks.therapists
+                .filter((link) => !(hideJoinTeamCta && link.href === "/join-team"))
+                .map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}

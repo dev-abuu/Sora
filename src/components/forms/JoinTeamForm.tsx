@@ -10,8 +10,7 @@ import {
 import { SubmitButton } from "@/components/ui/Button";
 import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { siteConfig } from "@/data/site";
-import { openEnquiryEmail } from "@/lib/email";
+import { submitEnquiry } from "@/lib/email";
 
 interface FormData {
   fullName: string;
@@ -59,7 +58,7 @@ function validate(data: FormData): FormErrors {
     errors.email = "Please enter a valid email address.";
   }
   if (!data.phone.trim()) errors.phone = "Please enter your phone number.";
-  if (!data.location.trim()) errors.location = "Please enter your location.";
+  if (!data.location.trim()) errors.location = "Please enter your city or region.";
   if (!data.professionalTitle.trim()) errors.professionalTitle = "Please enter your professional title.";
   if (!data.qualifications.trim()) errors.qualifications = "Please list your qualifications.";
   if (!data.yearsExperience) errors.yearsExperience = "Please select your years of experience.";
@@ -90,6 +89,7 @@ export function JoinTeamForm() {
   const [errors, setErrors] = useState<FormErrors>({});
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState("");
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>,
@@ -105,36 +105,48 @@ export function JoinTeamForm() {
     }
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const validationErrors = validate(form);
     if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors);
       return;
     }
+    const honey = (e.currentTarget.elements.namedItem("website") as HTMLInputElement | null)?.value;
+    setSubmitError("");
     setSubmitting(true);
-    openEnquiryEmail(
-      `Join Team application — ${form.fullName}`,
-      [
-        `Full name: ${form.fullName}`,
-        `Email: ${form.email}`,
-        `Phone: ${form.phone}`,
-        `Location: ${form.location}`,
-        `Professional title: ${form.professionalTitle}`,
-        `Years of experience: ${form.yearsExperience}`,
-        `Qualifications: ${form.qualifications}`,
-        `Specialities: ${form.specialities}`,
-        form.previousExperience && `Previous experience: ${form.previousExperience}`,
-        `Availability: ${form.availability}`,
-        form.workingArrangements && `Working arrangements: ${form.workingArrangements}`,
-        `Right to work: ${form.rightToWork}`,
-        form.additionalInfo && `Additional information: ${form.additionalInfo}`,
-      ]
-        .filter(Boolean)
-        .join("\n"),
-    );
-    setSubmitting(false);
-    setSubmitted(true);
+    try {
+      await submitEnquiry({
+        type: "join-team",
+        subject: `Join Team application — ${form.fullName}`,
+        replyTo: form.email.trim(),
+        honey,
+        fields: {
+          "Full name": form.fullName,
+          Email: form.email,
+          Phone: form.phone,
+          "City / region": form.location,
+          "Professional title": form.professionalTitle,
+          "Years of experience": form.yearsExperience,
+          Qualifications: form.qualifications,
+          Specialities: form.specialities,
+          "Previous experience": form.previousExperience,
+          Availability: form.availability,
+          "Working arrangements": form.workingArrangements,
+          "Right to work": form.rightToWork,
+          "Additional information": form.additionalInfo,
+        },
+      });
+      setSubmitted(true);
+    } catch (error) {
+      setSubmitError(
+        error instanceof Error
+          ? error.message
+          : "We could not send your application. Please try again.",
+      );
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   if (submitted) {
@@ -145,16 +157,9 @@ export function JoinTeamForm() {
           Application received
         </h3>
         <p className="mx-auto mt-4 max-w-md text-sm leading-relaxed text-text/75">
-          Thank you for your interest in joining the Sora Collective. Please send
-          the email that opened to{" "}
-          <a
-            href={`mailto:${siteConfig.email}`}
-            className="text-olive underline underline-offset-2 hover:text-olive-dark"
-          >
-            {siteConfig.email}
-          </a>{" "}
-          if it did not send automatically. This submission does not guarantee
-          placement.
+          Thank you for your interest in joining the Sora Collective. Our
+          recruitment team will review your application and be in touch. This
+          submission does not guarantee placement.
         </p>
       </div>
     );
@@ -172,7 +177,7 @@ export function JoinTeamForm() {
         <FormField label="Phone Number" id="phone" error={errors.phone}>
           <input id="phone" name="phone" type="tel" autoComplete="tel" value={form.phone} onChange={handleChange} className={inputClasses} aria-invalid={!!errors.phone} />
         </FormField>
-        <FormField label="Location" id="location" error={errors.location}>
+        <FormField label="City / region" id="location" error={errors.location}>
           <input id="location" name="location" type="text" value={form.location} onChange={handleChange} className={inputClasses} placeholder="City / region" aria-invalid={!!errors.location} />
         </FormField>
         <FormField label="Professional Title" id="professionalTitle" error={errors.professionalTitle}>
@@ -238,6 +243,17 @@ export function JoinTeamForm() {
           )}
         </div>
       </div>
+
+      <div className="hidden" aria-hidden="true">
+        <label htmlFor="join-website">Website</label>
+        <input id="join-website" name="website" type="text" tabIndex={-1} autoComplete="off" />
+      </div>
+
+      {submitError && (
+        <p className="text-sm text-red-700" role="alert">
+          {submitError}
+        </p>
+      )}
 
       <SubmitButton disabled={submitting} size="lg">
         {submitting ? "Submitting..." : "Join Team"}
