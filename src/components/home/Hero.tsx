@@ -24,11 +24,6 @@ export function Hero() {
             <br />
             Whenever You Need It.
           </h1>
-          <p className="mt-6 max-w-xl text-base leading-relaxed text-ivory/85 md:text-lg animate-fade-up-delay-1">
-            Sora Spa Collective connects hotels, spas and wellness businesses
-            with experienced, professional spa therapists — providing flexible
-            staffing solutions without compromising on service quality.
-          </p>
           <div className="mt-8 flex flex-wrap gap-4 animate-fade-up-delay-2">
             <Button href="/contact" size="lg">
               Discuss Your Needs
