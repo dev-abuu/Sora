@@ -18,12 +18,12 @@ export default function ForTherapistsPage() {
     <>
       <section className="relative flex min-h-[62vh] items-center overflow-hidden">
         <Image
-          src={photos.oilPourUniform}
-          alt="Spa therapist pouring oil during a professional treatment"
+          src={photos.forTherapist}
+          alt="Spa still life with massage stones, essential oils, a candle, sea salt and a rolled white towel"
           fill
           priority
           sizes="100vw"
-          className="object-cover object-[center_30%]"
+          className="object-cover object-[80%_center]"
         />
         <div className="absolute inset-0 bg-olive-dark/55" />
         <div className="relative z-10 section-padding container-wide w-full">
