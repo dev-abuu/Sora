@@ -133,6 +133,7 @@ export const aboutSections = [
     title: "Selective, intentional, quality-focused",
     image: "/images/spa/oil-pour-uniform.png",
     imageClass: "object-center",
+    backgroundClass: "bg-sage-soft",
     content: [
       "We take a selective approach to the professionals we represent. Quality over quantity guides every decision — from vetting therapists to understanding client needs.",
       "Our team works closely with both hospitality partners and therapists to ensure every placement is the right fit.",

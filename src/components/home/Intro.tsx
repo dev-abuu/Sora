@@ -18,11 +18,11 @@ export function Intro() {
           <RevealOnScroll delay={150}>
             <div className="relative aspect-[4/5] overflow-hidden rounded-sm">
               <Image
-                src={photos.treatmentRoom}
-                alt="Prepared spa treatment room with oils, linens and warm lighting"
+                src={photos.homeTalent}
+                alt="Spa therapist applying a facial treatment with a brush while a client rests on a treatment bed"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover object-[center_40%]"
+                className="object-cover object-[center_18%]"
               />
             </div>
           </RevealOnScroll>

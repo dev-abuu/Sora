@@ -13,11 +13,11 @@ export function JoinTeamSection() {
           <RevealOnScroll>
             <div className="relative aspect-[4/5] overflow-hidden rounded-sm">
               <Image
-                src={photos.oilPourBack}
-                alt="Spa therapist pouring massage oil during a professional treatment"
+                src={photos.homeTherapists}
+                alt="Spa still life with massage stones, essential oils, a candle, sea salt and a rolled white towel"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover object-[center_18%]"
+                className="object-cover object-[80%_center]"
               />
             </div>
           </RevealOnScroll>

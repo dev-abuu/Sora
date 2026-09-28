@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <>
-      <section className="section-padding bg-beige/30">
+      <section className="section-padding bg-sage">
         <div className="container-wide">
           <RevealOnScroll>
             <SectionHeading
@@ -31,7 +31,7 @@ export default function AboutPage() {
         <section
           key={section.id}
           id={section.id}
-          className={`section-padding ${index % 2 === 0 ? "bg-ivory" : "bg-beige/30"}`}
+          className={`section-padding ${section.backgroundClass ?? (index % 2 === 0 ? "bg-ivory" : "bg-beige/30")}`}
         >
           <div className="container-wide">
             <div className={`grid items-center gap-12 lg:grid-cols-2 lg:gap-16 ${index % 2 === 1 ? "lg:[direction:rtl]" : ""}`}>
