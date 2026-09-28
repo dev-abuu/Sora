@@ -49,7 +49,7 @@ export default function AboutPage() {
                 <div className="relative aspect-[4/5] overflow-hidden rounded-sm">
                   <Image
                     src={section.image}
-                    alt={`${section.title} — Sora Spa Collective`}
+                    alt={section.imageAlt ?? `${section.title} — Sora Spa Collective`}
                     fill
                     sizes="(max-width: 1024px) 100vw, 50vw"
                     className={`object-cover ${section.imageClass}`}

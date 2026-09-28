@@ -131,8 +131,9 @@ export const aboutSections = [
     id: "approach",
     eyebrow: "Our Approach",
     title: "Selective, intentional, quality-focused",
-    image: "/images/spa/oil-pour-uniform.png",
-    imageClass: "object-center",
+    image: "/images/spa/our_approach.jpeg",
+    imageAlt: "Spa therapist applying a facial treatment with a brush while a client rests on a treatment bed",
+    imageClass: "object-[center_18%]",
     backgroundClass: "bg-sage-soft",
     content: [
       "We take a selective approach to the professionals we represent. Quality over quantity guides every decision — from vetting therapists to understanding client needs.",

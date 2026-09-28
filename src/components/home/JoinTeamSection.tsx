@@ -13,7 +13,7 @@ export function JoinTeamSection() {
           <RevealOnScroll>
             <div className="relative aspect-[4/5] overflow-hidden rounded-sm">
               <Image
-                src={photos.homeTherapists}
+                src={photos.forTherapist}
                 alt="Spa still life with massage stones, essential oils, a candle, sea salt and a rolled white towel"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
