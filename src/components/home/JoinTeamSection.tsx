@@ -11,13 +11,14 @@ export function JoinTeamSection() {
       <div className="container-wide">
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
           <RevealOnScroll>
-            <div className="relative aspect-[4/5] overflow-hidden rounded-sm">
+            <div className="relative aspect-[5/2] overflow-hidden rounded-sm">
               <Image
                 src={photos.forTherapist}
                 alt="Spa still life with massage stones, essential oils, a candle, sea salt and a rolled white towel"
                 fill
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover object-[80%_center]"
+                quality={90}
+                sizes="(max-width: 1024px) 100vw, 75vw"
+                className="object-cover object-center"
               />
             </div>
           </RevealOnScroll>
