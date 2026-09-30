@@ -135,6 +135,7 @@ export const aboutSections = [
     imageAlt: "Spa therapist applying a facial treatment with a brush while a client rests on a treatment bed",
     imageClass: "object-[center_18%]",
     backgroundClass: "bg-sage-soft",
+    lightText: true,
     content: [
       "We take a selective approach to the professionals we represent. Quality over quantity guides every decision — from vetting therapists to understanding client needs.",
       "Our team works closely with both hospitality partners and therapists to ensure every placement is the right fit.",

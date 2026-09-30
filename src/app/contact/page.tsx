@@ -14,10 +14,11 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <>
-      <section className="section-padding bg-beige/30">
+      <section className="section-padding bg-sage">
         <div className="container-wide">
           <RevealOnScroll>
             <SectionHeading
+              light
               eyebrow="Contact"
               title="We would love to hear from you"
               description="Whether you need spa staff for your business or wish to join the Sora Collective — our team is here to help."

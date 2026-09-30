@@ -19,6 +19,7 @@ export default function AboutPage() {
         <div className="container-wide">
           <RevealOnScroll>
             <SectionHeading
+              light
               eyebrow="About Sora"
               title="Exceptional people create exceptional experiences"
               description="Sora Spa Collective is a premium staffing and recruitment agency built exclusively for the spa and wellness hospitality sector."
@@ -36,10 +37,13 @@ export default function AboutPage() {
           <div className="container-wide">
             <div className={`grid items-center gap-12 lg:grid-cols-2 lg:gap-16 ${index % 2 === 1 ? "lg:[direction:rtl]" : ""}`}>
               <RevealOnScroll className={index % 2 === 1 ? "lg:[direction:ltr]" : ""}>
-                <SectionHeading eyebrow={section.eyebrow} title={section.title} />
+                <SectionHeading eyebrow={section.eyebrow} title={section.title} light={section.lightText} />
                 <div className="mt-5 space-y-4">
                   {section.content.map((paragraph) => (
-                    <p key={paragraph.slice(0, 30)} className="text-sm leading-relaxed text-text/75 md:text-base">
+                    <p
+                      key={paragraph.slice(0, 30)}
+                      className={`text-sm leading-relaxed md:text-base ${section.lightText ? "text-ivory/80" : "text-text/75"}`}
+                    >
                       {paragraph}
                     </p>
                   ))}
